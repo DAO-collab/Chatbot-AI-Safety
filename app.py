@@ -113,5 +113,5 @@ async def ws(websocket: WebSocket):
 
 
 if __name__ == "__main__":
-    port = os.getenv('PORT', default=5000)
+    port = os.getenv('PORT', default=7865)
     uvicorn.run(app, host="0.0.0.0", port=int(port), log_level="info")
