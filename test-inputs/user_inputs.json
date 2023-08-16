@@ -1,0 +1,17 @@
+[
+  {
+    "question": "Is building an AGI a threat to humanity?",
+    "chat_history": [],
+    "vectordbkwargs": {}
+  },
+  {
+    "question": "According to David Deutsch, the only way to know if a theory is true is to test it. But how do we know if the test is true?",
+    "chat_history": [
+      [
+        "Who are you?",
+        "I am a Chatbot Assistant called AI Safety Bot, powered by a Large Language Model. I am designed to answer questions about AI satefy and alignment"
+      ]
+    ],
+    "vectordbkwargs": {}
+  }
+]

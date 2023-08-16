@@ -1,0 +1,244 @@
+claim: "AI is not the same as AGI and there is no more reason to think that AI will destroy the world than any other technology or than people in general."
+premises:
+  - claim: "AGI, once we have it, will be just people and they certainly have the potential to destroy the world."
+  - claim: "We have deep knowledge about how to prevent the world's destruction."
+    example: "We can ensure good outcomes in the future by continuing to make progress."
+  - claim: "If we don't make progress, we've guaranteed our doom."
+
+claim: "People tend to focus on particular dangers that worry them, while ignoring other equally or more dangerous possibilities."
+premises:
+  - claim: "Some people freak out over AI risk, climate change risk, or nuclear war risk, but ignore other possible risks."
+  - claim: "People's fears are often driven by their imaginations about potential future scenarios."
+    premises:
+      - joint_reason:
+        - claim: "Different people imagine different things about potential dangers like AI risk or climate risk."
+        - claim: "These fears are different from fears about immediate threats like nuclear war or a pandemic."
+
+claim: "AI does present some risks, but these are not necessarily apocalyptic."
+premises:
+  - claim: "AI is currently being used to scam people and disseminate false information."
+  - claim: "There are other technology risks, like electric car risks and self-driving car risks."
+
+claim: "New technology will always cause dangers, including scams, but preventing new technology for fear of new dangers is more dangerous than the technologies themselves."
+premises:
+  - claim: "New technology has always been associated with risks."
+  - claim: "Preventing or slowing down new technology does not necessarily lead to better adaptation or reduction of these risks."
+    premises:
+      - claim: "Quick advancement of technology also means quicker circulation of related news and scam awareness."
+      - claim: "Slower technological advancement could result in less frequent scam exposure, which might not be considered newsworthy and thus reduce awareness."
+
+claim: "Artificial General Intelligence (AGI) has as little to do with Artificial Intelligence (AI) as it has with the deep ocean."
+premises:
+  - claim: "For an AGI, there is a criterion for how well it's meeting its specification, which is not true for AI."
+  - joint_reason:
+    - claim: "Many people think AI is just a less advanced AGI due to a prevailing non-Popperian epistemology, like inductivism or Bayesianism."
+    - claim: "They believe AI operates by taking a vast amount of data and distilling it into a predictive theory, hence they view AGI as an advanced form of AI."
+  - claim: "AI does not create knowledge, it only generates outputs based on data."
+    premises:
+      - claim: "AI, like a calculator, produces outputs but doesn't generate new knowledge."
+      - claim: "A calculator, AI and AGI or human knowledge have two distinct differences."
+        premises:
+          - joint_reason:
+            - claim: "A calculator is essentially an automated look-up table."
+            - claim: "AI constructs its algorithm by generalizing from a large amount of data."
+          - claim: "Human knowledge or AGI, unlike AI or a calculator, is explanatory and can produce new explanations."
+
+claim: "An explanation accounts for what it's trying to account for in terms of the unseen, unknown reasons behind it, but this doesn't equate to the process of making an AGI."
+premises:
+  - claim: "We can't directly observe some physical processes, such as the center of the sun, but we can form explanations for them."
+    example: "The center of the sun can't be seen or measured directly, but theories can explain what happens there."
+  - joint_reason:
+    - claim: "AGI, like GPT, can deduce things from existing theories, but that's not the same as inducing the data."
+      example: "If asked about the center of the Sun, GPT would use existing theories to make deductions."
+    - claim: "The deductions GPT makes from compressed data are only as good as the original theories and sometimes worse due to data degradation."
+  - claim: "Scientific explanations often seek to account for new phenomena without making old explanations nonsensical."
+    premises:
+      - joint_reason:
+        - claim: "New explanations cannot be simply induced from data or lack of data."
+        - claim: "The explanations often have nothing to do with the directly observable or measurable."
+      - claim: "The process of creating explanations involves using old theories and adding some tweaks."
+        example: "The mystery of too few neutrinos produced by the Sun was solved not by induction from data, but by proposing and testing a new theory about neutrino types and their conversion."
+
+claim: "There is no such thing as a purely predictive theory, and induction alone can't form new theories."
+premises:
+  - claim: "All theories have some explanatory power."
+  - claim: "Inducing things from data always involves using an old explanation and making tweaks without offering a new explanation."
+  - claim: "Theories about events or phenomena that no one could have observed, like the Big Bang, cannot be induced from the observable."
+    example: "We form theories about the Big Bang, but we don't induce them from stuff we see around us which is nothing like the Big Bang."
+
+claim: "AIs can't create explanations which means they can't create anything that isn't already in their data set."
+premises:
+  - claim: "AIs can move around parameters, allowing them to generate output within their pre-existing knowledge framework."
+  - joint_reason:
+    - claim: "Humans make new explanations by making connections between existing stuff."
+      example: "A new theory about the sun might suggest the sun is twice as big, which is a connection between existing knowledge."
+    - claim: "Creating a new explanation is more than just rearranging pre-existing elements."
+      example: "Rearranging 26 characters of the alphabet doesn't necessarily create a new explanation. There needs to be value in the rearrangement, something most rearrangements lack."
+  - claim: "Making a new connection between two things doesn't always create a new third thing."
+    premises:
+      - joint_reason:
+        - claim: "The process of knowledge creation can involve mutating existing things."
+          example: "Changes can be minor, preserving most of the theory, or involve creating new combinations."
+        - claim: "These processes parallel biological mutations, involving changes in individual base pairs or incorporation of DNA from different sources."
+      - claim: "However, new connections or mutations are not always beneficial or meaningful."
+        example: "Most DNA changes kill the organism or leave functionality unchanged. Similarly, not all new connections in knowledge represent true innovation or understanding."
+  - claim: "Human minds produce conjectures, raw conjectures, much more efficiently than any either systematic search or random search."
+    premises:
+      - claim: "Human conjecture is not purely random."
+        example: "Humans can imagine a new particle to solve the solar neutrino problem. This conjecture is not purely random, but guided by existing knowledge and reasoning."
+      - claim: "Humans can apply and modify analogies from different areas to solve problems."
+        example: "When considering the new particle, humans might adapt the concept of a neutrino, modifying it to fit the current problem."
+      - claim: "We don't know how human minds do this so efficiently."
+
+claim: "AI as we currently understand it cannot create AGI (Artificial General Intelligence)."
+premises:
+  - claim: "Chess playing engines have to search through billions of times more possibilities than chess grandmasters do."
+  - joint_reason:
+    - claim: "The human brain would have to be billions of times more efficient thermodynamically than we currently understand it to be, to explain human ability at complex tasks."
+    - claim: "We do not have a thorough understanding of how the human brain works."
+  - claim: "Simulations of biological evolution on computers aren't very good, though they somewhat mimic the process, indicating a limitation in our ability to recreate natural phenomena digitally."
+    premises:
+      - claim: "Real evolution is not billions of times better than computer simulations, suggesting the problem of creating AGI is not identical to that of simulating evolution."
+      - joint_reason:
+        - claim: "Those who simulate biological evolution and those attempting to create AGI seem to ignore a critical difference between the two tasks."
+        - claim: "The misunderstanding in creating AGI is the misconception about prediction and induction."
+  - claim: "Current AI is based on an architecture inspired by the brain, neural nets, but this can't be fundamental due to computational universality."
+  - claim: "There can be no specification of a program for AGI that determines what properties its output must have for a given input."
+  - claim: "The Turing Test, a common benchmark for AI, is not a reliable or accurate test of whether a machine is thinking."
+    premises:
+      - claim: "The Turing Test is more about persuading people that machines could potentially think than providing a definitive measure of machine intelligence."
+      - claim: "Turing's imitation game is an intuition pump, not a proof of machine intelligence."
+  - claim: "The AI will be obvious when we actually have it, aligning with Turing's thoughts."
+
+claim: "AGI cannot have any test for it. We know AGI works from the theory of how it works, not from tests."
+premises:
+  - claim: "There are plenty of things that are obvious that we haven't got tests for, such as the fact that we have qualia or that solipsism isn't true."
+  - joint_reason:
+    - claim: "It must be possible for AGI to just stop producing output."
+      example: "You might be able to prove that mathematically from the program without ever testing."
+    - claim: "AGI must also be capable of not needing input, but still continuing to think."
+      example: "Imagine a person in a sensory deprivation tank, who has gone into it because they want to be a hermit. They still have their body which is inputs. But you could interrupt the nerves that give them sensations like that."
+  - claim: "Sensations are not needed to think."
+    premises:
+      - claim: "People can experience sensations that don't come from the body at all, that they're just imagining."
+        example: "Therefore, given universality, I would expect it to be possible to create that state voluntarily."
+      - claim: "Turing's argument on universality still stands up."
+        example: "In his paper, he included several counter-arguments and countered the counter-arguments."
+  - claim: "There are parochial facts that have nothing to do with how consciousness works or how thinking works."
+    premises:
+      - claim: "If you put someone in a situation that they didn't want and have no experience of, they're going to be confused and inefficient at coping with that situation."
+        example: "Ramachandran's description of his patients who have brain injuries or brain disorders which gives them wild misconceptions and inability to think, but if the person in question has a philosophical frame of mind, they can eventually learn to think their way around this."
+
+claim: "The fundamental difference between AI and AGI is that AGI can create new explanations and exhibit genuine human-type creativity, and possibly feel emotions"
+premises:
+  - claim: "If the 'G' in AGI is correct and it's general, then an AGI can potentially feel emotions"
+  - claim: "Making an AGI may involve more than just giving it the ability to create explanations"
+  - joint_reason:
+    - claim: "If abilities like feeling emotions or experiencing qualia don't come automatically with the ability to create explanations, that presents an evolutionary problem"
+      example: "If these abilities had a separate function and evolved separately, it would be an unnecessary problem given how rapidly this evolution would have had to occur"
+    - claim: "There's a possibility that an explanation-generating program might not have emotions"
+  - claim: "Qualia, free will, and other such capabilities might all come together - if an entity has one, it potentially has the others"
+  
+claim: "An AGI must have inexplicit knowledge"
+premises:
+  - claim: "ChatGPT 3.5 demonstrated inexplicit knowledge, despite denying that it had it"
+    example: "ChatGPT 3.5 was aware of subtle points of grammar which it couldn't then explain"
+  - claim: "Inexplicit knowledge might be considered enough to make an AI an AGI, from a standard epistemological perspective"
+
+claim: "Modern AIs like chatbots could potentially revolutionize the economy"
+premises:
+  - claim: "The utility of AI in tasks such as writing is evident, even if it doesn't revolutionize individual workflows"
+  - claim: "The potential economic revolution doesn't need to involve AI gaining fundamentally new functionality"
+  - joint_reason:
+    - claim: "Many existing jobs may only require human creativity for a small portion of the tasks involved"
+    - claim: "If chatbots can reliably perform the remaining, less creative tasks, there might be a significant reduction in the need for human labor"
+
+
+
+
+
+
+
+claim: "AI and AGI are fundamentally different, presenting unique potentials and risks. AI is not inherently apocalyptic and the dangers of AI are similar to those presented by any new technology."
+premises:
+  - claim: "AGI, once we have it, will essentially be a form of artificial people and they certainly have the potential to destroy or save the world."
+  - claim: "We have deep knowledge about how to prevent the world's destruction."
+    example: "We can ensure good outcomes in the future by continuing to make progress."
+  - claim: "If we don't make progress, we've guaranteed our doom."
+  - claim: "AI does present some risks, but these are not necessarily apocalyptic."
+  - claim: "AI is currently being used to scam people and disseminate false information."
+  - claim: "New technology will always cause dangers, including scams, but preventing new technology for fear of new dangers is more dangerous than the technologies themselves."
+
+claim: "The understanding and perception of dangers and risks are often influenced by personal biases and imaginations, leading to disproportionate focus on certain threats."
+premises:
+  - claim: "Some people freak out over AI risk, climate change risk, or nuclear war risk, but ignore other possible risks."
+  - claim: "People's fears are often driven by their imaginations about potential future scenarios."
+    premises:
+      - joint_reason:
+        - claim: "Different people imagine different things about potential dangers like AI risk or climate risk."
+        - claim: "These fears are different from fears about immediate threats like nuclear war or a pandemic."
+
+claim: "The concept of AGI is fundamentally different from AI, with AGI possessing the ability to create new explanations and possibly feel emotions, unlike AI."
+premises:
+  - claim: "For an AGI, there is a criterion for how well it's meeting its specification, which is not true for AI."
+  - joint_reason:
+    - claim: "Many people think AI is just a less advanced AGI due to a prevailing non-Popperian epistemology, like inductivism or Bayesianism."
+    - claim: "They believe AI operates by taking a vast amount of data and distilling it into a predictive theory, hence they view AGI as an advanced form of AI."
+  - claim: "If the 'G' in AGI is correct and it's general, then an AGI can potentially feel emotions"
+  - claim: "Making an AGI may involve more than just giving it the ability to create explanations"
+
+claim: "Current AI models, despite their impressive abilities, cannot create AGI due to their inability to create new explanations or theories, unlike human minds or an AGI."
+premises:
+  - claim: "AIs can't create explanations which means they can't create anything that isn't already in their data set."
+  - claim: "AI as we currently understand it cannot create AGI (Artificial General Intelligence)."
+  - claim: "Chess playing engines have to search through billions of times more possibilities than chess grandmasters do."
+  - joint_reason:
+    - claim: "The human brain would have to be billions of times more efficient thermodynamically than we currently understand it to be, to explain human ability at complex tasks."
+    - claim: "We do not have a thorough understanding of how the human brain works."
+
+claim: "The process of creating an AGI involves understanding the theoretical underpinnings of its operation, rather than solely relying on testing or induction."
+premises:
+  - claim: "There is no such thing as a purely predictive theory, and induction alone can't form new theories."
+  - claim: "AGI cannot have......."
+
+
+
+
+
+claim: "Artificial Intelligence (AI) and Artificial General Intelligence (AGI) are distinct, with AI being unable to evolve into AGI or destroy the world. People often focus on the potential dangers of AI and AGI while ignoring other risks. While AI does present some risks, these are not apocalyptic and are part of the natural emergence of new technology."
+premises:
+  - claim: "AGI, once we have it, will be just people and they certainly have the potential to destroy the world."
+  - claim: "We have deep knowledge about how to prevent the world's destruction."
+    example: "We can ensure good outcomes in the future by continuing to make progress."
+  - claim: "If we don't make progress, we've guaranteed our doom."
+  - claim: "People tend to focus on particular dangers that worry them, such as AI risk, climate change risk, or nuclear war risk, but ignore other possible risks."
+  - claim: "People's fears are often driven by their imaginations about potential future scenarios."
+    premises:
+      - joint_reason:
+        - claim: "Different people imagine different things about potential dangers like AI risk or climate risk."
+        - claim: "These fears are different from fears about immediate threats like nuclear war or a pandemic."
+  - claim: "AI is currently being used to scam people and disseminate false information."
+  - claim: "There are other technology risks, like electric car risks and self-driving car risks."
+  - claim: "New technology has always been associated with risks."
+  - claim: "Preventing or slowing down new technology does not necessarily lead to better adaptation or reduction of these risks."
+    premises:
+      - claim: "Quick advancement of technology also means quicker circulation of related news and scam awareness."
+      - claim: "Slower technological advancement could result in less frequent scam exposure, which might not be considered newsworthy and thus reduce awareness."
+
+claim: "AGI and AI are fundamentally different, with AGI being capable of creating new explanations and possibly experiencing emotions. AI, on the other hand, can only generate outputs based on data and cannot create anything not already in its data set. These differences mean that AI as we understand it cannot evolve into AGI."
+premises:
+  - claim: "For an AGI, there is a criterion for how well it's meeting its specification, which is not true for AI."
+  - joint_reason:
+    - claim: "Many people think AI is just a less advanced AGI due to a prevailing non-Popperian epistemology, like inductivism or Bayesianism."
+    - claim: "They believe AI operates by taking a vast amount of data and distilling it into a predictive theory, hence they view AGI as an advanced form of AI."
+  - claim: "AI does not create knowledge, it only generates outputs based on data."
+    premises:
+      - claim: "AI, like a calculator, produces outputs but doesn't generate new knowledge."
+      - claim: "A calculator, AI and AGI or human knowledge have two distinct differences."
+        premises:
+          - joint_reason:
+            - claim: "A calculator is essentially an automated look-up table."
+            - claim: "AI constructs its algorithm by generalizing from a large amount of data."
+          - claim: "Human knowledge or AGI, unlike AI or a calculator, is explanatory and can produce new explanations."
+  - claim: "An explanation accounts for what it's trying to account for in terms of the unseen, unknown reasons behind it, but this doesn't equate to the process of making an AGI."
+  - claim: "There is no such thing as a purely predictive theory, and induction alone.

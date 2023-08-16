@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI Safety - Solutionist Chatbot</title>
+    <link rel="icon" type="image/x-icon" href="/static/boticon.jpg" />
+
+    <meta name="description" content="LexiBot" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/styles/globals.css" />
+    <link rel="stylesheet" href="/static/styles/Home.module.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="topnav">
+      <div class="navlogo">
+        <a href="/">AI Safety - Solutionist Chatbot</a>
+      </div>
+    </div>
+
+    <main class="main">
+      <div class="cloud">
+        <div class="messagelist" id="list">
+          <div class="apimessage">
+            <img
+              src="/static/boticon.jpg"
+              alt="AI"
+              width="30"
+              height="30"
+              class="boticon"
+            />
+            What do you want to ask?
+          </div>
+        </div>
+      </div>
+
+      <div class="center">
+        <div class="cloudform">
+          <form id="input" onsubmit="sendMessage(event)">
+            <textarea
+              rows="1"
+              maxlength="2048"
+              type="text"
+              id="question"
+              name="question"
+              placeholder="Type your question..."
+              class="textarea"
+            ></textarea>
+            <button type="submit" class="generatebutton" id="send">
+              <svg
+                viewBox="0 0 20 20"
+                class="svgicon"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"
+                ></path>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script>
+    function toggleModal(event) {
+      let modal = event.target.getAttribute("modal");
+      document
+        .querySelector(`div[modal="${modal}"]`)
+        .classList.toggle("show-modal");
+    }
+
+    function toggleModalByID(modal) {
+      document
+        .querySelector(`div[modal="${modal}"]`)
+        .classList.toggle("show-modal");
+    }
+
+    function windowOnClick(event) {
+      if (event.target.classList.contains("modal")) {
+        toggleModal(event);
+      }
+    }
+
+    function create_modal_element(button_text, id, content) {
+      let modal = document.createElement("button");
+      let div = document.createElement("div");
+      modal.innerText = button_text;
+      modal.setAttribute("modal", id);
+      div.setAttribute("modal", id);
+      modal.classList.add("trigger");
+      div.classList.add("modal");
+      div.innerHTML = `<div class="modal-content">
+            <span class="close-button" onclick="toggleModalByID(this.getAttribute('modal'));" modal="${id}">&times;</span>
+            ${content}
+        </div>`;
+
+      modal.onclick = toggleModal;
+      div.onclick = windowOnClick;
+      document.body.appendChild(div);
+      return modal;
+    }
+  </script>
+  <script>
+    let chat_history = [];
+    let index = 1;
+
+    var host = window.location.host;
+    var endpoint;
+    if (location.protocol === "https:") {
+      endpoint = `wss://${host}/ws`;
+    } else {
+      endpoint = `ws://${host}/ws`;
+    }
+    var ws = new WebSocket(endpoint);
+
+    // Receive message from server word by word. Display the words as they are received.
+    ws.onmessage = function (event) {
+      var messages = document.getElementById("list");
+      var data = JSON.parse(event.data);
+      if (data.sender === "bot") {
+        if (data.type === "start") {
+          var question = document.getElementById("question");
+          question.innerHTML = "Computing answer...";
+
+          var div = document.createElement("div");
+          div.setAttribute("class", "apimessage");
+          let contentid = `text-${index}`;
+          let refid = `ref-${index}`;
+          div.innerHTML = `<img src="/static/boticon.jpg" alt="AI" width="30" height="30"
+                     class="boticon"/><div id=${contentid}></div><div class="source-container" id=${refid}></div>`;
+          messages.appendChild(div);
+        } else if (data.type === "stream") {
+          var question = document.getElementById("question");
+          question.innerHTML = "Chatbot is typing...";
+          var div = messages.lastChild.childNodes[1];
+          if (data.message === "\n") {
+            if (div.innerHTML !== "") {
+              div.innerHTML += "<br>";
+            }
+          } else {
+            div.innerHTML += data.message;
+          }
+        } else if (data.type === "info") {
+          var question = document.getElementById("question");
+          question.innerHTML = data.message;
+        } else if (data.type === "end") {
+          let refid = `ref-${index}`;
+          const source_documents = data.source_documents;
+          let ref = document.getElementById(refid);
+          let i = 0;
+          while (i < source_documents.length) {
+            i++;
+            ref.append(
+              create_modal_element(
+                `[${i}] `,
+                `modal-${refid}-${i}`,
+                source_documents[i - 1]
+              )
+            );
+          }
+          var question = document.getElementById("question");
+          question.value = "";
+          question.readOnly = false;
+
+          var button = document.getElementById("send");
+          button.disabled = false;
+
+          chat_history = data.chat_history;
+          index++;
+        } else if (data.type === "error") {
+          var question = document.getElementById("question");
+          question.innerHTML = "";
+
+          var div = messages.lastChild.childNodes[1];
+          div.innerHTML += data.message;
+        }
+      } else {
+        let div = document.createElement("div");
+        div.setAttribute("class", "usermessage");
+        div.innerHTML = `<img src="/static/usericon.png" alt="AI" width="30" height="30"
+                     class="usericon"/>${data.message}`;
+        list.append(div);
+        messages.appendChild(div);
+      }
+      // Scroll to the bottom of the chat
+      messages.scrollTop = messages.scrollHeight;
+    };
+
+    document
+      .getElementById("question")
+      .addEventListener("keypress", function (e) {
+        if (e.which === 13 && !e.shiftKey) {
+          e.preventDefault();
+          $(this).closest("form").submit();
+        }
+      });
+
+    // Send message to server
+    function sendMessage(event) {
+      event.preventDefault();
+      var question = document.getElementById("question");
+      var message = question.value;
+      if (message === "") {
+        return;
+      }
+
+      ws.send(
+        JSON.stringify({
+          question: message,
+          chat_history: chat_history,
+        })
+      );
+      question.value = "Loading...";
+      question.readOnly = true;
+
+      // Turn the button into a loading button
+      var button = document.getElementById("send");
+      button.disabled = true;
+    }
+  </script>
+</html>
