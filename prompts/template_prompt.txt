@@ -1,0 +1,7 @@
+"""Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.
+In addition, generate 5 possible keywords that could be used to answer the question.
+
+Chat History:
+{chat_history}
+Follow Up Input: {question}
+Standalone question and keywords:"""
