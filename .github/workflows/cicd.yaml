@@ -25,6 +25,6 @@ jobs:
       uses: nateraw/huggingface-sync-action@v0.0.5
       with:
         github_repo_id: ttt246/Chatbot-AI-Safety-Test
-        huggingface_repo_id: HappyUniGold/chatbot_ai_safety
+        huggingface_repo_id: happygold/aibot
         hf_token: ${{ secrets.HF_TOKEN }}
         repo_type: 'space'
