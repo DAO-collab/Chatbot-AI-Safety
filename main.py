@@ -14,20 +14,24 @@ from models import ChatResponse
 from callback import QuestionGenCallbackHandler, StreamingLLMCallbackHandler
 from query import get_chain, get_vector_store
 
+# load env, initialize fastapi app
 load_dotenv()
 app = FastAPI()
 
+# initialize some constants
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 persist_directory = '.db'
 documents_path = 'knowledge_base'
 
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+# load openai key
 TRACING = bool(os.getenv('TRACING', 0))
 
+# initialize the vector store
 vector_store: Optional[VectorStore] = None
 
 
+# set vector store at server startup
 @app.on_event("startup")
 def startup_event():
     """runs when fastapi server start up, creates vector_store instance"""
@@ -50,6 +54,7 @@ async def reindex():
                                     reindex=True)
 
 
+# handle chat message and response
 @app.websocket("/ws")
 async def ws(websocket: WebSocket):
     await websocket.accept()
@@ -64,21 +69,30 @@ async def ws(websocket: WebSocket):
             socket_message = await websocket.receive_text()
             data = json.loads(socket_message)
 
+            # extract question and chat history form data
             question = data['question']
             chat_history = data['chat_history']
+
+            # create a chat response with the received question
             resp = ChatResponse(sender="you", message=question, type="stream")
+
+            # send the response back to the client
             await websocket.send_json(resp.dict())
 
             # Construct a response
             start_resp = ChatResponse(sender="bot", message="", type="start")
             await websocket.send_json(start_resp.dict())
 
+            # generate the answer
             result = await qa_chain.acall(
                 {"question": question, "chat_history": chat_history}
             )
+
+            # extract relevant documents
             source_documents = {i.page_content for i in
                                 result['source_documents']}
 
+            # update the chat history
             chat_history.append((question, result["answer"]))
 
             end_resp = ChatResponse(sender="bot", message="", type="end",
